@@ -44,10 +44,11 @@ git push file-origin project-name / local
 ```
 
 ### 📸 SCREENSHOTS
-<img alt="input salary" src="tax1.PNG"><br>
-<img alt="payroll" src="tax2.PNG"><br>
-<img alt="detailed fees" src="tax3.PNG"><br>
-<img alt="only the payroll" src="tax4.PNG">
+<img alt="homepage" src="/images/home.png"><br>
+<img alt="insert form" src="/images/insert.png"><br>
+<img alt="view table" src="/images/view.png"><br>
+<img alt="error if date was inserted wrongly" src="/images/view_error.png">
+<img alt="selecting date" src="/images/view_search.png">
 
 
 ### TERMS OF USE
