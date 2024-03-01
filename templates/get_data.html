@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Choose Date</title>
 </head>
 <body>
     <div>
     <form action="/view" method="post">
         <label for="start">From</label>
-        <input type="date" id="start" name="start">
+        <input type="date" id="start" name="start" class="area_get_data">
         <label for="finish">To</label>
-        <input type="date" id="finish" name="finish">
+        <input type="date" id="finish" name="finish" class="area_get_data">
         <button type="submit" value="Submit">Submit</button>
     </form>
     </div>
+    <a href="/" class="homepage_link">Home</a>
 </body>
 </html>

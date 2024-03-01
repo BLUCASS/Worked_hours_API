@@ -1,0 +1,153 @@
+/* FIELDSET AREA */
+fieldset {
+    width: 400px;
+    height: 310 px;
+    border: 2px solid #ff6600;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* DIV AREA */
+div.area {
+    position: relative;
+    left: 30%;
+    top: 10px;
+}
+
+div.row {
+    font-family: 'Arial', sans-serif;
+    color: #ff6600;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* LABEL AREA */
+label {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+
+/* BUTTON AREA */
+input {
+    position: relative;
+    left: 10px;
+    margin-bottom: 10px;
+    padding: 4px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 80px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+input.field_id {
+    width: 115px;
+}
+
+input.area_get_data {
+    width: 115px;
+    margin-right: 20px;
+}
+
+/* BUTTON AREA */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ff6600;
+    border: 2px solid #ff6600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff8533;
+    border-color: #ff8533;
+}
+
+
+/* LINKS AREA */
+a {
+    color: #ff8533;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+a:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre o link */
+    color: #cc5500;
+}
+
+
+/* TABLE AREA */
+table {
+    left: 30%;
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-style: groove;
+}
+
+table, th, td {
+    border: 2px solid #ff6600;
+    margin-top: -80px;
+    margin-left: 10%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+th {
+    background-color: #ff9933;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #ffe6cc;
+}
+tr:nth-child(odd) {
+    background-color: #ffcc99;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff; /* Cor de fundo da página */
+    margin: 0;
+    padding: 0;
+}
+.container_homepage {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h1 {
+    color: #ff6600; /* Cor do título em alaranjado */
+}
+
+p {
+    color: #777;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

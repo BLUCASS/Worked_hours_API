@@ -50,10 +50,21 @@ class Week:
                                 data['sunday_out'], 
                                 salary[1],
                                 self.__get_date(date, 6))
+        dates = [monday[0], tuesday[0], wednesday[0], thursday[0], 
+                 friday[0], saturday[0], sunday[0]]
+        exists = self.__check_if_exists(dates)
+        if exists: return False
         new_list = self.__get_list(monday, tuesday, wednesday, thursday, friday,
-                        saturday, sunday)
+                                   saturday, sunday)
         return new_list
     
+    def __check_if_exists(self, dates):
+        exists = False
+        for date in dates:
+            ok = session.query(WorkedHours).filter(WorkedHours.date == date).first() is not None
+            if ok: exists = True
+        return exists
+
     def __get_date(self, date, days) -> str:
         """This function receives a datetime object and returns it as a str."""
         from datetime import timedelta
@@ -92,22 +103,11 @@ class Week:
         clockin = datetime.strptime(begin, "%H:%M")
         clockout = datetime.strptime(finish, "%H:%M")
         shift = clockout - clockin
-        self.total_hours += shift.total_seconds()
+        hours_number = shift.total_seconds()/3600
+        self.total_hours += hours_number
         daily_rate = ((shift.total_seconds()/3600) * salary)
         self.total_money += daily_rate
-        return day, str(shift), salary, daily_rate, self.__convert_seconds(), self.total_money
-    
-    def __hours_converter(self, seconds):
-        horas = seconds // 3600
-        min = (seconds % 3600) // 60
-        seg = seconds % 60
-        return str(horas) + ':' + str(min)
-
-    def __convert_seconds(self) -> str:
-        """This function only takes the input number from the form and returns
-        it as a datetime object"""
-        from datetime import timedelta
-        return str(timedelta(seconds=self.total_hours))
+        return day, str(shift), salary, round(daily_rate, 2), round(self.total_hours, 2), round(self.total_money, 2)
 
 
 class DbManagement:
@@ -140,13 +140,27 @@ class DbManagement:
             if len(data) == 0: raise IndexError
             return data
         except:
-            return 404
+            return False
+
+    def update(self, date):
+        exists = self.__check_date(date)
+        if exists == False: return False
+        return True
+
+    def __check_date(self, date) -> bool:
+        try:
+            data = session.query(WorkedHours).filter(WorkedHours.date == date).first()
+            if len(data) == 0: raise IndexError
+        except: return False
+        else: return data
 
     def __search_range(self, start, finish):
         try:
+            date1 = session.query(WorkedHours).filter(WorkedHours.date == start).first() is not None
+            date2 = session.query(WorkedHours).filter(WorkedHours.date == finish).first() is not None
+            if date1 == False or date2 == False: raise IndexError
             data = session.query(WorkedHours).filter(WorkedHours.date.between(start, finish)).all()
             if len(data) == 0: raise IndexError
-        except:
-            return 404
+        except: return False
         else:
             return data

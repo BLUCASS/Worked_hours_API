@@ -3,7 +3,7 @@ from controller import DbManagement, Week
 
 app = Flask(__name__)
 
-@app.route('/home', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
     """This is the homepage"""
     return render_template("home.html")
@@ -17,7 +17,7 @@ def database():
 def insert():
     """This page only shows that you succeeded"""
     data = request.form
-    Week().get_week(data)
+    if Week().get_week(data) == False: return render_template("error.html")
     return render_template("week_sent.html")
 
 @app.route('/get_data', methods=['GET'])
@@ -30,8 +30,9 @@ def view():
     """This page will show the database itself"""
     data = request.form
     data = DbManagement().view(data)
-    if data == 404: return render_template("error.html")
+    if data == False: return render_template("error.html")
     return render_template("view.html", list=data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

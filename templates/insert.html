@@ -2,59 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
     <title>Insert</title>
 </head>
 <body>
-    <h3><p>Weekly Hours Input</p></h3>
-    <form action="/database" method="post">
-        <div>
-            <label for="salary">Payment rate</label>
-            <input type="number" name="salary" id="salary" placeholder="Ex. 11.9" step=".01">
+    <div class="area">
+        <fieldset>
+        <div class="row">
+            <h3><p>Weekly Hours Input</p></h3>
         </div>
-        <div>
-            <label for="sunday_salary">Sunday rate</label>
-            <input type="number" name="sunday_salary" id="sunday_salary" placeholder="Ex. 11.9" step=".01">
-        </div>
-        <div>
-            <label for="monday">Monday</label>
-            <input type="time" name="monday_in" id="monday" value="00:00">
-            <input type="time" name="monday_out" id="monday" value="00:00">
-            <input type="date" id="date" name="date">
-        </div>
-        <div>
-            <label for="tuesday">Tuesday</label>
-            <input type="time" name="tuesday_in" id="tuesday" value="00:00">
-            <input type="time" name="tuesday_out" id="tuesday" value="00:00">
-        </div>
-        <div>
-            <label for="wednesday">Wednesday</label>
-            <input type="time" name="wednesday_in" id="wednesday" value="00:00">
-            <input type="time" name="wednesday_out" id="wednesday" value="00:00">
-        </div>
-        <div>
-            <label for="thursday">Thursday</label>
-            <input type="time" name="thursday_in" id="thursday" value="00:00">
-            <input type="time" name="thursday_out" id="thursday" value="00:00">
-        </div>
-        <div>
-            <label for="friday">Friday</label>
-            <input type="time" name="friday_in" id="friday" value="00:00">
-            <input type="time" name="friday_out" id="friday" value="00:00">
-        </div>
-        <div>
-            <label for="saturday">Saturday</label>
-            <input type="time" name="saturday_in" id="saturday" value="00:00">
-            <input type="time" name="saturday_out" id="saturday" value="00:00">
-        </div>
-        <div>
-            <label for="sunday">Sunday</label>
-            <input type="time" name="sunday_in" id="sunday" value="00:00">
-            <input type="time" name="sunday_out" id="sunday" value="00:00">
-        </div>
-        <div>
-            </br>
-            <button type="submit" value="Submit">Submit</button>
-        </div>
-    </form>
+        <form action="/database" method="post">
+            <div id="">
+                <label for="salary">Payment rate</label>
+                <input type="number" class="field_salary" name="salary" id="salary" placeholder="Ex. 11.9" step=".01">
+            </div>
+            <div>
+                <label for="sunday_salary">Sunday rate</label>
+                <input type="number" class="field_sunday_salary" name="sunday_salary" id="sunday_salary" placeholder="Ex. 11.9" step=".01">
+            </div>
+            <div>
+                <label for="monday">Monday</label>
+                <input type="time" name="monday_in" id="monday" value="00:00">
+                <input type="time" name="monday_out" id="monday" value="00:00">
+                <input type="date" class="field_id" id="date" name="date">
+            </div>
+            <div>
+                <label for="tuesday">Tuesday</label>
+                <input type="time" name="tuesday_in" id="tuesday" value="00:00">
+                <input type="time" name="tuesday_out" id="tuesday" value="00:00">
+            </div>
+            <div>
+                <label for="wednesday">Wednesday</label>
+                <input type="time" name="wednesday_in" id="wednesday" value="00:00">
+                <input type="time" name="wednesday_out" id="wednesday" value="00:00">
+            </div>
+            <div>
+                <label for="thursday">Thursday</label>
+                <input type="time" name="thursday_in" id="thursday" value="00:00">
+                <input type="time" name="thursday_out" id="thursday" value="00:00">
+            </div>
+            <div>
+                <label for="friday">Friday</label>
+                <input type="time" name="friday_in" id="friday" value="00:00">
+                <input type="time" name="friday_out" id="friday" value="00:00">
+            </div>
+            <div>
+                <label for="saturday">Saturday</label>
+                <input type="time" name="saturday_in" id="saturday" value="00:00">
+                <input type="time" name="saturday_out" id="saturday" value="00:00">
+            </div>
+            <div>
+                <label for="sunday">Sunday</label>
+                <input type="time" name="sunday_in" id="sunday" value="00:00">
+                <input type="time" name="sunday_out" id="sunday" value="00:00">
+            </div>
+            <div>
+                </br>
+                <button type="submit" value="Submit">Submit</button>
+            </div>
+        </form>
+    </fieldset>
+    </div>
+    <a href="/" class="homepage_link">Home</a>
 </body>
 </html>
