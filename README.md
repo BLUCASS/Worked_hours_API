@@ -49,3 +49,5 @@ git push file-origin project-name / local
 <img alt="view table" src="/images/view.png"><br>
 <img alt="error if date was inserted wrongly" src="/images/view_error.png">
 <img alt="selecting date" src="/images/view_search.png">
+<img alt="main" src="/images/main.png">
+<img alt="model" src="/images/model.png">
