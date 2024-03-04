@@ -159,7 +159,10 @@ class DbManagement:
             date1 = session.query(WorkedHours).filter(WorkedHours.date == start).first() is not None
             date2 = session.query(WorkedHours).filter(WorkedHours.date == finish).first() is not None
             if date1 == False or date2 == False: raise IndexError
-            data = session.query(WorkedHours).filter(WorkedHours.date.between(start, finish)).all()
+            first_date = session.query(WorkedHours).filter(WorkedHours.date == start).first()
+            first_id = first_date.id
+            last_id = first_id + 7
+            data = session.query(WorkedHours).filter(WorkedHours.id.between(first_id, last_id)).all()
             if len(data) == 0: raise IndexError
         except: return False
         else:
